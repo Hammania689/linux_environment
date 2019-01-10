@@ -3,4 +3,4 @@
 - [ ] Add download and installations of cuda
 - [ ] Add gnome download and macbuntu setup
 - [ ] Add i3 config file (macros, audio settings, background, etc)
-- [ ] Flameshot installation
+- [ ] Flameshot installation. Needs to be install from src. Follow debian install instructions [here](https://github.com/lupoDharkael/flameshot#install)
