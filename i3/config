@@ -339,10 +339,14 @@ exec_always --no-startup-id xset -dpms
 # Toogle Monitors
 bindsym $mod+Shift+s exec --no-startup-id ~/bin/monitor
 
+# Configure Monitor Order
+exec --no-startup-id xrandr --output eDP-1 --right-of HDMI-1 
+exec --no-startup-id xrandr --output HDMI-1 --right-of VGA-1
+
 # Lock Screen
 # set desktop background with custom effect
 exec --no-startup-id betterlockscreen -u ~/Pictures/lockscreen -w dimblur -b 0.5 -r 1920x1080
 # Alternative (set last used background)
 exec --no-startup-id source ~/.fehbg
-
 bindsym $mod+shift+x exec betterlockscreen -l dimblur -b 0.5 -r 1920x1080
+
