@@ -369,6 +369,5 @@ bindsym Control+Mod1+Delete exec "betterlockscreen -u ~/Pictures/lockscreen/kh3_
 # Screen Shots
 bindsym --release $mod+Shift+p exec flameshot gui
 
-# ibus settings
-exec ibus-daemon -drx
-# exec_always GTK_IM_MODULE=ibus XMODIFIERS=@im=ibus QT_IM_MODULE=ibus ibus-daemon -drx
+# ibus settings 한국어 (NOTE: add to System startup!)
+# exec_always --no-startup-id ibus-daemon --xim -dr  
