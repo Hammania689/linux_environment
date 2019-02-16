@@ -9,4 +9,4 @@
 	`sudo apt-get install pkg-config libcairo2-dev gcc python3-dev libgirepository1.0-dev`
 [Here](https://askubuntu.com/questions/80448/what-would-cause-the-gi-module-to-be-missing-from-python) is a related forum post.
 
-3. Add the **ibus_startup.sh** to startup script ([info](https://linuxconfig.org/how-to-automatically-execute-shell-script-at-startup-boot-on-systemd-linux)
+3. Add the **ibus_startup.sh** to startup script ([info](https://linuxconfig.org/how-to-automatically-execute-shell-script-at-startup-boot-on-systemd-linux))
