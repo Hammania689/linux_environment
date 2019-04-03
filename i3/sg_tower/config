@@ -44,7 +44,7 @@ bindsym $mod+d exec "rofi -combi-modi window,drun,ssh -show combi -modi combi -m
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.focused          4c7899 #285577 #ffffff #2e9ef4   #285577
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -107,6 +107,16 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+set $ws11 "11"
+set $ws12 "12"
+set $ws13 "13"
+set $ws14 "14"
+set $ws15 "15"
+set $ws16 "16"
+set $ws17 "17"
+set $ws18 "18"
+set $ws19 "19"
+set $ws20 "20"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -119,6 +129,18 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
+# workspaces from 11-20
+bindsym $mod+Control+1 workspace 11
+bindsym $mod+Control+2 workspace 12
+bindsym $mod+Control+3 workspace 13
+bindsym $mod+Control+4 workspace 14
+bindsym $mod+Control+5 workspace 15
+bindsym $mod+Control+6 workspace 16
+bindsym $mod+Control+7 workspace 17
+bindsym $mod+Control+8 workspace 18
+bindsym $mod+Control+9 workspace 19
+bindsym $mod+Control+0 workspace 20
+
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -312,9 +334,12 @@ mode "$mode_gaps_left" {
 
 # smart_gaps on
 # smart_borders on|no_gaps
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 6 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 6 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 6 toggle # mute sound
+# set $default_Sink "$(pacmd list-sinks | grep -e '*')"
+# set $sink ${default_Sink:(-1)}
+set $sink 2
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $sink +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $sink -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $sink toggle # mute sound
 
 # Media player controls
 # pause / play / next / previous
@@ -330,7 +355,6 @@ bindsym $mod+Shift+f exec google-chrome
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Set Background 
-exec_always --no-startup-id feh --bg-scale Pictures/ang_zuko.jpg 
 exec_always --no-startup-id xcompmgr
 
 # Fix Border issue with background
@@ -348,24 +372,24 @@ exec_always --no-startup-id xset -dpms
 bindsym $mod+Shift+s exec --no-startup-id ~/bin/monitor
 
 # Configure Monitor Order
-exec_always --no-startup-id xrandr --auto
-exec_always --no-startup-id xrandr --output eDP-1 --right-of HDMI-1 
-exec_always --no-startup-id xrandr --output HDMI-1 --right-of VGA-1
+# TODO FIX STARTUP SCRIPT
+exec --no-startup-id source ~/.potrait_setup.sh 
+
 
 # Lock Screen
 # set desktop background with custom effect
 # exec --no-startup-id  "betterlockscreen -u ~/Pictures/lockscreen/neon.jpg -w dimblur -b .59 -r 1080x1920"
+exec_always --no-startup-id "betterlockscreenPotrait -u ~/Pictures/backgrounds/ blur -b .6; betterlockscreenPotrait -w"
 
 # Alternative (set last used background)
-# exec_always --no-startup-id source ~/.fehbg 
-# exec_always feh --bg-scale --no-xinerama ~/Pictures/lockscreen/neon.jpg
+exec_always --no-startup-id source ~/.fehbg 
 
 # Lock Screen
-bindsym $mod+shift+x exec "betterlockscreen -u ~/Pictures/lockscreen/kh3_sora.jpg -l blur -b .18 -r 1080x1920"
-bindsym XF86PowerOff exec "betterlockscreen -u ~/Pictures/lockscreen/kh3_sora.jpg -l blur -b .18 -r 1080x1920"
+bindsym $mod+shift+x exec "betterlockscreenPotrait -u ~/Pictures/lockscreen/ -l dimblur -b .18"
+bindsym XF86PowerOff exec "betterlockscreenPotrait -u ~/Pictures/lockscreen/ -l dimblur -b .18"
 
 # Suspend
-bindsym Control+Mod1+Delete exec "betterlockscreen -u ~/Pictures/lockscreen/kh3_sora.jpg -s blur -b .18 -r 1080x1920"
+bindsym Control+Mod1+Delete exec "betterlockscreenPotrait -u ~/Pictures/lockscreen/ -s blur -b .18"
 
 # Screen Shots
 bindsym --release $mod+Shift+p exec flameshot gui
@@ -373,13 +397,27 @@ bindsym --release $mod+Shift+p exec flameshot gui
 # ibus settings 한국어 (NOTE: add to System startup!)
 # exec_always --no-startup-id ibus-daemon --xim -dr  
 
+# Redshift ... MY EYES!
+exec --no-startup-id redshift
+
 # Desktop Window Order 
 workspace 1 output DVI-D-I
 workspace 2 output HDMI-1
 workspace 3 output DP-2
 workspace 4 output DVI-D-I
-workspace 5 output HDMI-1
+workspace 5 output HDMI-1o
 workspace 6 output DP-2
 workspace 7 output DVI-D-I
 workspace 8 output HDMI-1
 workspace 9 output DP-2
+workspace 10 output DVI-D-I
+workspace 11 output HDMI-1
+workspace 12 output DP-2
+workspace 13 output DVI-D-I
+workspace 14 output HDMI-1
+workspace 15 output DP-2
+workspace 16 output DVI-D-I
+workspace 17 output HDMI-1
+workspace 18 output DP-2
+workspace 19 output DVI-D-I
+workspace 20 output HDMI-1
