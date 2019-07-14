@@ -1,4 +1,5 @@
 # Things to Add
+- [ ] Get ssh tunneling and settings straight
 - [ ] Add list with inline links of packages in this config
 - [ ] Add download and installations of cuda
 - [ ] Abstract things away with a python script that accepts arguements
@@ -6,10 +7,12 @@
 
 
 # Notes to self
+- [ ] ssh config settings reference [here][ssh]
 - [X] Install latest release of [playerctl][playerctl]
-- [X] Flameshot installation. Needs to be built from src. Follow debian install instructions [here]
+- [X] Flameshot installation. Needs to be built from src. Follow debian install instructions [here][flameshot]
 - [X] Ibus Notes to self. Startup scripts,resources,etc
 
 
+[ssh]: https://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/
 [playerctl]: https://github.com/acrisci/playerctl
 [flameshot]: https://github.com/lupoDharkael/flameshot#install
