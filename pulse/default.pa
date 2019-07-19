@@ -22,7 +22,7 @@
 
 ### Automatically restore the volume of streams and devices
 load-module module-device-restore
-load-module module-stream-restore restore_device=false
+load-module module-stream-restore
 load-module module-card-restore
 
 ### Automatically augment property information from .desktop files
@@ -143,4 +143,4 @@ load-module module-filter-apply
 ### Make some devices default
 #set-default-sink output
 #set-default-source input
-
+set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo>
