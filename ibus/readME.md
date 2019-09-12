@@ -2,7 +2,8 @@
 
 
 1. Install ibus and Korean packages: `sudo apt install ibus ibus-hangul ttf-baekmuk`. [Here](https://www.reddit.com/r/i3wm/comments/5i3hsl/i_cant_type_in_korean_without_logging_into_gnome/) is a related Reddit post.
-
+** For 18.04 `tff-baekmuk` is unaviable use `sudo apt-get install fonts-baekmuk` instead. More info [here][post]
+[post]: https://ubuntu.pkgs.org/18.04/ubuntu-universe-i386/fonts-baekmuk_2.2-12_all.deb.html
 2. Install the "gi" module: 
 	`sudo apt install python3-gi`
 	`sudo apt install python-gi`
