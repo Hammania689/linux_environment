@@ -1,0 +1,31 @@
+Host brown_tunnel
+	HostName ssh.cs.brown.edu
+	IdentityFile ~/.ssh/brown_cs
+	#LocalForward 8880 localhost:8880
+	#LocalForward 8010 localhost:8010
+	LocalForward 5000 sophon:22
+	LocalForward 3307 sophon:3306
+	# LocalForward 8880 sophon:8880
+	User habdulr1
+    # PasswordAuthentication yes
+
+Host stk_server
+    User ec2-user
+    HostName ec2-52-14-172-161.us-east-2.compute.amazonaws.com
+    IdentityFile ~/.ssh/micro-instance.pem
+
+
+Host sophon
+  HostName sophon.smn.cs.brown.edu
+  LocalForward 8880 localhost:8880
+  LocalForward 8010 localhost:8010
+  IdentityFile ~/.ssh/brown_cs
+  User ham
+  ProxyCommand ssh -q brown_tunnel nc %h %p
+
+#Host github.com
+ #   IdentityFile ~/.ssh/github.key
+
+Host * 
+    IdentitiesOnly=yes
+    ForwardAgent yes
