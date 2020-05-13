@@ -7,7 +7,7 @@
 
 
 # Notes to self
-- [ ] ssh config settings reference [here][ssh]
+- [X] ssh config settings reference [here][ssh]
 - [X] Install latest release of [playerctl][playerctl]
 - [X] Flameshot installation. Needs to be built from src. Follow debian install instructions [here][flameshot]
 - [X] Ibus Notes to self. Startup scripts,resources,etc
