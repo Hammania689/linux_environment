@@ -1,0 +1,4 @@
+
+fuser -k 8080/tcp 5000/tcp
+
+ssh -N -f ScaryGermsTunnel
