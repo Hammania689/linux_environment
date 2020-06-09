@@ -1,10 +1,11 @@
+## Plugin suggestions :plug:
 [Vim Awesome Plugins][awesome]
-[vundle tutorial][vundle_tut]
-
-[Vim with clipboard support issue][clipboard]
 
 
-[Formatting json][format_json]
+## Tutorials, Resources, Debugging
+- [vundle tutorial][vundle_tut]
+- [Vim with clipboard support issue][clipboard]
+- [Formatting json][format_json]
 
 
 
