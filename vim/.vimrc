@@ -22,6 +22,7 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 
 
+
 " Color Schemes
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
@@ -29,15 +30,23 @@ Plugin 'altercation/vim-colors-solarized'
 " File Browsing
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'mortonfox/nerdtree-clip'
 
 " Super Searching
 Plugin 'kien/ctrlp.vim'
 
 " Git Integration
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
 
 " Powerline
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+" Comment out line
+Plugin 'preservim/nerdcommenter'
+
+" Git Gutter
+Plugin 'airblade/vim-gitgutter'
 
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
@@ -206,6 +215,25 @@ set nu
 
 " System Clipboard
 set clipboard=unnamed
+
+" Change vim update swap time to 100ms
+set updatetime=100
+
+
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+filetype plugin on
+map <C-c> :NERDCommenterToggle
+
+" Gitgutter Signs' colours and symbols
+let g:gitgutter_sign_added = '++'
+let g:gitgutter_sign_modified = 'yy'
+let g:gitgutter_sign_removed = 'zz'
+let g:gitgutter_sign_removed_first_line = '^^'
+let g:gitgutter_sign_modified_removed = 'ww'
+
+highlight GitGutterAdd    guifg=#009900 ctermfg=2
+highlight GitGutterChange guifg=#bbbb00 ctermfg=3
+highlight GitGutterDelete guifg=#ff2222 ctermfg=1
 
 " python with virtualenv support 
 py3 << EOF
