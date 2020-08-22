@@ -48,6 +48,10 @@ Plugin 'preservim/nerdcommenter'
 " Git Gutter
 Plugin 'airblade/vim-gitgutter'
 
+" Python Docstring
+" NOTE disable python enviroment before running
+Plugin 'heavenshell/vim-pydocstring', { 'do': 'make install' }
+
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
 
@@ -110,6 +114,7 @@ let mapleader=" "
 " 2. GoTo shortcut
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+map <C-I> :YcmCompleter GetDoc<CR>
 
 " Syntax Highlighting
 let python_highlight_all=1
