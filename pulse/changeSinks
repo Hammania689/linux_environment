@@ -14,8 +14,14 @@ case "${1:-}" in
       awk '/index:/{print $2}' |
       xargs -r -I{} pacmd move-sink-input {} $1 ||
         echo failed
+
+    echo "Changing sink from $DEFAULT_SINK to $1. Be sure environment was updated. For more info see https://stackoverflow.com/questions/496702/can-a-shell-script-set-environment-variables-of-the-calling-shell"
+    export DEFAULT_SINK=$1
+    # Update the shell environment to reflect the change
+    # See https://stackoverflow.com/questions/496702/can-a-shell-script-set-environment-variables-of-the-calling-shell
     ;;
   (*)
     echo "Usage: $0 [|list|<sink name to switch to>]"
     ;;
 esac
+
