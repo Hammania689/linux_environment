@@ -41,6 +41,15 @@ Host sophon
   User ham
   ProxyCommand ssh -q brown_tunnel nc %h %p
 
+Host taranoke
+  HostName taranoke.smn.cs.brown.edu
+  LocalForward 8880 localhost:8880
+  LocalForward 8010 localhost:8010
+  IdentityFile ~/.ssh/brown_cs
+  User ham
+  ProxyCommand ssh -q brown_tunnel nc %h %p
+
+
 Host github.com
    IdentityFile ~/.ssh/github
 
