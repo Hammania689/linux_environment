@@ -53,6 +53,13 @@ Host taranoke
 Host github.com
    IdentityFile ~/.ssh/github
 
+Host orpah
+  HostName 10.193.163.60
+  LocalForward 8090 localhost:8090
+  LocalForward 8080 localhost:8080
+  IdentityFile ~/.ssh/uiuc
+  User hameed
+
 Host * 
     IdentitiesOnly=yes
     ForwardAgent yes
