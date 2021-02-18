@@ -2,14 +2,14 @@ Host ScaryGermsTunnel
   HostName 10.65.170.86
   LocalForward 8080 localhost:8080
   LocalForward 5000 localhost:22
-  IdentityFile ~/.ssh/orca
+  IdentityFile /home/ham/.ssh/orca
   User hameed
   ProxyCommand ssh -q orca nc %h %p
 
 
 Host orca
   HostName orca.st.usm.edu
-  IdentityFile ~/.ssh/orca
+  IdentityFile /home/ham/.ssh/orca
   #LocalForward 5000 scarygerms:22
   #LocalForward 8080 scarygerms:8080
   User habdulra
@@ -19,13 +19,13 @@ Host scarygerms
   HostName 10.65.170.86
   LocalForward 8080 localhost:8080
   LocalForward 5000 localhost:22
-  IdentityFile ~/.ssh/orca
+  IdentityFile /home/ham/.ssh/orca
   User hameed
   ProxyCommand ssh -q orca nc %h %p
 
 Host brown_tunnel
   HostName ssh.cs.brown.edu
-  IdentityFile ~/.ssh/brown_cs
+  IdentityFile /home/ham/.ssh/brown_cs
   #LocalForward 8880 localhost:8880
   #LocalForward 8010 localhost:8010
   LocalForward 5000 sophon:22
@@ -37,7 +37,7 @@ Host sophon
   HostName sophon.smn.cs.brown.edu
   LocalForward 8880 localhost:8880
   LocalForward 8010 localhost:8010
-  IdentityFile ~/.ssh/brown_cs
+  IdentityFile /home/ham/.ssh/brown_cs
   User ham
   ProxyCommand ssh -q brown_tunnel nc %h %p
 
@@ -45,7 +45,7 @@ Host taranoke
   HostName taranoke.smn.cs.brown.edu
   LocalForward 8880 localhost:8880
   LocalForward 8010 localhost:8010
-  IdentityFile ~/.ssh/brown_cs
+  IdentityFile /home/ham/.ssh/brown_cs
   User ham
   ProxyCommand ssh -q brown_tunnel nc %h %p
 
@@ -53,11 +53,11 @@ Host taranoke
 Host github.com
    IdentityFile ~/.ssh/github
 
-Host orpah
+Host oprah
   HostName 10.193.163.60
   LocalForward 8090 localhost:8090
   LocalForward 8080 localhost:8080
-  IdentityFile ~/.ssh/uiuc
+  IdentityFile /home/ham/.ssh/uiuc
   User hameed
 
 Host * 
