@@ -3,8 +3,8 @@ Host brown_tunnel
 	IdentityFile ~/.ssh/brown_cs
 	#LocalForward 8880 localhost:8880
 	#LocalForward 8010 localhost:8010
-	LocalForward 5000 sophon:22
-	LocalForward 3307 sophon:3306
+	#LocalForward 5000 sophon:22
+	#LocalForward 3307 sophon:3306
 	# LocalForward 8880 sophon:8880
 	User habdulr1
     # PasswordAuthentication yes
@@ -23,6 +23,29 @@ Host sophon
   User ham
   ProxyCommand ssh -q brown_tunnel nc %h %p
 
+Host taranoke
+  HostName taranoke.smn.cs.brown.edu
+  LocalForward 8880 localhost:8880
+  LocalForward 8010 localhost:8010
+  IdentityFile ~/.ssh/brown_cs
+  User ham
+  ProxyCommand ssh -q brown_tunnel nc %h %p
+
+
+Host nano
+  HostName nano.ncsa.illinois.edu
+  User hameeda2
+
+Host hal
+  HostName hal.ncsa.illinois.edu
+  User hameeda2
+
+
+#Host github.com
+    #HostName github.com
+    #User *
+#    IdentityFile ~/.ssh/github
+#
 #Host github.com
  #   IdentityFile ~/.ssh/github.key
 
