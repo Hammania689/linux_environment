@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "def Settings( **kwargs ):
+  return {
+    'interpreter_path': '/home/ham/.pyenv/shims/python'
+  }" >> .ycm_extra_conf.py
