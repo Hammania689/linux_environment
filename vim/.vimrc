@@ -88,11 +88,23 @@ au BufNewFile,BufRead *.py
     \ set tabstop=4
     \ set softtabstop=4
     \ set shiftwidth=4
+    \ set shiftround
     \ set textwidth=79
     \ set expandtab
     \ set autoindent
     \ set fileformat=unix
 
+
+" Pasting settings
+" Just to see tab/spaces/endline clearly:
+set encoding=utf-8
+set list
+set listchars=tab:▸\ ,eol:¬
+nnoremap <F5> :set list!<cr>
+
+set pastetoggle=<F9>
+noremap  <F9>   :set invpaste paste?<CR>
+inoremap <F9>   <C-O>:set invpaste<CR>
 
 " Fullstack dev
 au BufNewFile,BufRead *.js, *.html, *.css
@@ -228,6 +240,7 @@ set updatetime=100
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 filetype plugin on
 map <C-c> :NERDCommenterToggle
+nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>
 
 " Gitgutter Signs' colours and symbols
 let g:gitgutter_sign_added = '++'
