@@ -276,3 +276,4 @@ EOF
 " Jedi Vim find usages (see https://github.com/davidhalter/jedi-vim#features)
 let g:jedi#usages_command = "<leader>u"
 let g:jedi#rename_command = "<leader>r"
+let g:jedi#use_tabs_not_buffers = 1
