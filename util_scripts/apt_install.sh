@@ -1,6 +1,12 @@
 sudo apt-get update
 
-INSTALL_PKGS="tmux python3-tk openssh-server"
+INSTALL_PKGS="tmux 
+	      python3-tk 
+	      openssh-server 
+	      vim 
+	      vim-gtk
+	      ranger
+	      gnome-shell-pomodoro"
 for i in $INSTALL_PKGS; do
   sudo apt-get install -y $i
 done
