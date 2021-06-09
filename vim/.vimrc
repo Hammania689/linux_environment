@@ -48,6 +48,9 @@ Plugin 'preservim/nerdcommenter'
 " Git Gutter
 Plugin 'airblade/vim-gitgutter'
 
+" Jedi
+Plugin 'davidhalter/jedi-vim'
+
 " Python Docstring
 " NOTE disable python enviroment before running
 Plugin 'heavenshell/vim-pydocstring', { 'do': 'make install' }
@@ -268,3 +271,8 @@ py3 << EOF
 #	 print(cmd)
 #	 os.popen(cmd)
 EOF
+
+
+" Jedi Vim find usages (see https://github.com/davidhalter/jedi-vim#features)
+let g:jedi#usages_command = "<leader>u"
+let g:jedi#rename_command = "<leader>r"
