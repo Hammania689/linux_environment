@@ -1,0 +1,3 @@
+#!/bin/bash
+#sshfs ham@192.17.178.198:/home/ham/GithubWorkspace ~/remote/bigBertha
+sshfs bigBertha:/home/ham/GithubWorkspace ~/remote/bigBertha -o Ciphers=arcfour, reconnect
