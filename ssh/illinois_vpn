@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# See https://computingforgeeks.com/connect-to-vpn-server-with-cisco-anyconnect-from-linux-terminal/#:~:text=Automating%20VPN%20connection%20from%20CLI
+
+VPN_SERVER="vpn.illinois.edu"
+echo "Connecting to VPN.."
+/opt/cisco/anyconnect/bin/vpn -s  < ~/.vpn_creds connect ${VPN_SERVER}
