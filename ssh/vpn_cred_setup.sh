@@ -1,9 +1,9 @@
 #!/usr/bin
 echo "Create a file name ./vpn_creds and place the following inside:"
-printf """0
+printf """8
 username
 password
-y
+push
 exit
 """
 echo "Refer here: https://superuser.com/a/726542"
